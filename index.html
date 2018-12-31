@@ -1,16 +1,36 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>SANIC</title>
+    
+    <style>
+        html,body {
+          margin: 0;
+          padding: 0;
+        }
+        
+        body {
+          align-items: center;
+          display: flex;
+          font-family: "Helvetica Neue", sans-serif;
+          justify-content: center;
+          height: 100vh;
+          text-align: center;
+          width: 100vw;
+        }
+    </style>
 </head>
 <body>
-<div id="status"></div>
-<script type="text/javascript">
-fetch("https://api.sanic.ca")
-.then(function() {
-    document.getElementById("status").innerHTML="sanic is currently online.";
-})
-.catch(function() {
-    document.getElementById("status").innerHTML="sanic is currently offline or at reduced capacity";
-});
-</script>
+    <div id="status"></div>
+    <script type="text/javascript">
+    fetch("https://api.sanic.ca")
+    .then(function() {
+        document.getElementById("status").innerHTML="sanic is currently online.";
+    })
+    .catch(function() {
+        document.getElementById("status").innerHTML="sanic is currently offline or at reduced capacity";
+    });
+    </script>
 </body>
 </html>
