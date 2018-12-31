@@ -1,0 +1,16 @@
+<html>
+<head>
+</head>
+<body>
+<div id="status"></div>
+<script type="text/javascript">
+fetch("https://api.sanic.ca")
+.then(function() {
+    document.getElementById("status").innerHTML="sanic is currently online.";
+})
+.catch(function() {
+    document.getElementById("status").innerHTML="sanic is currently offline or at reduced capacity";
+});
+</script>
+</body>
+</html>
