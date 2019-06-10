@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>SANIC</title>
+    <title>Valkyrie</title>
     
     <style>
         html,body {
@@ -24,12 +24,12 @@
 <body>
     <div id="status" style="font-size: 4vw;"></div>
     <script type="text/javascript">
-    fetch("https://api.sanic.ca")
+    fetch("https://api.kyri.io")
     .then(function() {
-        document.getElementById("status").innerHTML=`Sanic is currently <span style="color:#2ECC40;">online</span>.`;
+        document.getElementById("status").innerHTML=`Val<span>kyri</span>e is currently <span style="color:#2ECC40;">online</span>.`;
     })
     .catch(function() {
-        document.getElementById("status").innerHTML=`Sanic is currently <span style="color:#FF4136;">offline</span> or at <span style="color:#FF851B;">reduced capacity</span>.`;
+        document.getElementById("status").innerHTML=`Val<span>kyri</span>e is currently <span style="color:#FF4136;">offline</span> or at <span style="color:#FF851B;">reduced capacity</span>.`;
     });
     </script>
 </body>
