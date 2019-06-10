@@ -1,2 +1,2 @@
-# sanic.ca
-the sanic homepage
+# kyri.io
+the valkyrie homepage
