@@ -3,13 +3,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Valkyrie</title>
-    
+
     <style>
+        html {
+          background: #100e17;
+          color: #FFF;
+        }
+
         html,body {
           margin: 0;
           padding: 0;
         }
-        
+
         body {
           align-items: center;
           display: flex;
@@ -19,17 +24,26 @@
           text-align: center;
           width: 100vw;
         }
+
+        .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          text-align: center;
+        }
     </style>
 </head>
 <body>
     <div id="status" style="font-size: 4vw;"></div>
+    <div class="footer"><p>&copy; 2019 Project Valkyrie</p></div>
     <script type="text/javascript">
     fetch("https://api.kyri.io")
     .then(function() {
-        document.getElementById("status").innerHTML=`Val<i>kyri</i>e is currently <span style="color:#2ECC40;">online</span>.`;
+        document.getElementById("status").innerHTML=`Valkyrie is currently <span style="color:#2ECC40;">online</span>.`;
     })
     .catch(function() {
-        document.getElementById("status").innerHTML=`Val<span>kyri</span>e is currently <span style="color:#FF4136;">offline</span> or at <span style="color:#FF851B;">reduced capacity</span>.`;
+        document.getElementById("status").innerHTML=`Valkyrie is currently <span style="color:#FF4136;">offline</span> or at <span style="color:#FF851B;">reduced capacity</span>.`;
     });
     </script>
 </body>
