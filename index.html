@@ -38,7 +38,7 @@
           width: 100%;
        }
 
-        .footer {
+       .footer {
           bottom: 0;
           position: fixed;
           left: 0;
@@ -50,10 +50,13 @@
 <body>
     <div id="summer-banner" style="display:none;"></div>
 
-    <div id="status" style="font-size: 4vw;"></div>
+    <div id="status" style="font-size: 65px;">fetching status...</div>
+
     <div class="footer"><p>&copy; 2019 Project Valkyrie</p></div>
 
     <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script type="text/javascript">
     fetch("https://api.kyri.io")
       .then(function() {
@@ -74,8 +77,26 @@
 
       if ((currMonth >= JUNE) && (currMonth <= SEPT)) {
         banner.style = "";
-        banner.innerHTML = `<p>Valkyrie will be running on a reduced summer <a href="https://schedule.status.kyri.io">schedule</a>.</p>`;
+        banner.innerHTML = `<p>Valkyrie will be running on a reduced summer <a id="sched-li" href="#">schedule</a>.</p>`;
       }
+    </script>
+
+    <script type="text/javascript">
+      $('a').click( (e) => {
+        e.preventDefault();
+        if (e.target.id == "sched-li") {
+          Swal.fire({
+            title: 'Summer Schedule',
+            text: 'MON-SUN: 9AM - 12AM',
+            imageUrl: 'https://fsvisuals.files.wordpress.com/2017/03/valkyrie-logo-design.jpg',
+            imageWidth: 200,
+            imageHeight: 200,
+            imageAlt: 'Valkyrie',
+            animation: false
+          })
+        }
+        return false;
+      });
     </script>
 </body>
 </html>
