@@ -2,9 +2,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="icon" 
-      type="image/png" 
-      href="favicon.png" />
     <title>Valkyrie</title>
 
     <style>
@@ -22,32 +19,63 @@
           align-items: center;
           display: flex;
           font-family: "Helvetica Neue", sans-serif;
-          justify-content: center;
           height: 100vh;
+          justify-content: center;
           text-align: center;
           width: 100vw;
         }
 
+        #summer-banner {
+          align-items: center;
+          background: #FFDC00;
+          color: #111;
+          display: flex;
+          height: 8vh;
+          justify-content: center;
+          left: 0;
+          position: fixed;
+          top: 0;
+          width: 100%;
+       }
+
         .footer {
+          bottom: 0;
           position: fixed;
           left: 0;
-          bottom: 0;
-          width: 100%;
           text-align: center;
+          width: 100%;
         }
     </style>
 </head>
 <body>
-    <div id="status" style="font-size: 65px;"></div>
+    <div id="summer-banner" style="display:none;"></div>
+
+    <div id="status" style="font-size: 4vw;"></div>
     <div class="footer"><p>&copy; 2019 Project Valkyrie</p></div>
+
+    <!-- scripts -->
     <script type="text/javascript">
     fetch("https://api.kyri.io")
-    .then(function() {
-        document.getElementById("status").innerHTML=`Valkyrie is currently <span style="color:#2ECC40;">online</span>.`;
-    })
-    .catch(function() {
-        document.getElementById("status").innerHTML=`Valkyrie is currently <span style="color:#FF4136;">offline</span> or at <span style="color:#FF851B;">reduced capacity</span>.`;
-    });
+      .then(function() {
+          document.getElementById("status").innerHTML=`Valkyrie is currently <span style="color:#2ECC40;">online</span>.`;
+      })
+      .catch(function() {
+          document.getElementById("status").innerHTML=`Valkyrie is currently <span style="color:#FF4136;">offline</span> or at <span style="color:#FF851B;">reduced capacity</span>.`;
+      });
+    </script>
+
+    <!-- banner -->
+    <script type="text/javascript">
+      const JUNE = 5;
+      const SEPT = 9;
+
+      var banner = document.getElementById("summer-banner");
+      var currMonth = new Date().getMonth();
+
+      if ((currMonth >= JUNE) && (currMonth <= SEPT)) {
+        banner.style = "";
+        banner.innerText = "Valkyrie will be running on a reduced summer schedule.";
+      }
     </script>
 </body>
 </html>
