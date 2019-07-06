@@ -3,9 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Valkyrie</title>
-    
-     <link rel=icon href=/favicon.png>
-    
+
     <style>
         html {
           background: #100e17;
@@ -25,6 +23,11 @@
           justify-content: center;
           text-align: center;
           width: 100vw;
+        }
+
+        #status {
+          padding-left: 5px;
+          padding-right: 5px;
         }
 
         #summer-banner {
@@ -48,10 +51,10 @@
           width: 100%;
         }
     </style>
+    <link href="noty/lib/noty.css" rel="stylesheet">
 </head>
 <body>
     <div id="summer-banner" style="display:none;"></div>
-
     <div id="status" style="font-size: 65px;">fetching status...</div>
 
     <div class="footer"><p>&copy; 2019 Project Valkyrie</p></div>
@@ -89,7 +92,7 @@
         if (e.target.id == "sched-li") {
           Swal.fire({
             title: 'Summer Schedule',
-            text: 'MON-SUN: 9AM - 12AM',
+            html: '<p>MON-SUN: 9AM - 12AM</p><p>**availability during extreme heat events not gauranteed.**</p>',
             imageUrl: 'https://fsvisuals.files.wordpress.com/2017/03/valkyrie-logo-design.jpg',
             imageWidth: 200,
             imageHeight: 200,
