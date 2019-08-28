@@ -80,9 +80,9 @@
       var banner = document.getElementById("summer-banner");
       var currMonth = new Date().getMonth();
 
-      if ((currMonth >= JUNE) && (currMonth <= SEPT)) {
+      if ((currMonth >= AUG) && (currMonth <= SEPT)) {
         banner.style = "";
-        banner.innerHTML = `<p>Valkyrie will be running on a reduced summer <a id="sched-li" href="#">schedule</a>.</p>`;
+        banner.innerHTML = `<p>Valkyrie will offline due to a physical<a id="sched-li" href="#">move</a>.</p>`;
       }
     </script>
 
@@ -91,8 +91,8 @@
         e.preventDefault();
         if (e.target.id == "sched-li") {
           Swal.fire({
-            title: 'Summer Schedule',
-            html: '<p>MON-SUN: 9AM - 12AM</p><p>**availability during extreme heat events not gauranteed.**</p>',
+            title: 'Scheduled Downtime',
+            html: '<p>08/29/2019 -> 09/04/2019</p><p>Valkyrie will be unavailable during the above period due to the move.</p>',
             imageUrl: 'https://fsvisuals.files.wordpress.com/2017/03/valkyrie-logo-design.jpg',
             imageWidth: 200,
             imageHeight: 200,
