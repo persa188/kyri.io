@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> 
     <meta charset="UTF-8">
     <title>Valkyrie</title>
 
@@ -30,19 +31,6 @@
           padding-right: 5px;
         }
 
-        #summer-banner {
-          align-items: center;
-          background: #FFDC00;
-          color: #111;
-          display: flex;
-          height: 8vh;
-          justify-content: center;
-          left: 0;
-          position: fixed;
-          top: 0;
-          width: 100%;
-       }
-
        .footer {
           bottom: 0;
           position: fixed;
@@ -51,16 +39,20 @@
           width: 100%;
         }
     </style>
-    <link href="noty/lib/noty.css" rel="stylesheet">
 </head>
 <body>
     <!-- <div id="summer-banner" style="display:none;"></div> -->
     <div id="status" style="font-size: 65px;">fetching status...</div>
 
-    <div class="footer"><p>&copy; 2019 Project Valkyrie</p></div>
+    <div class="footer"><p>&copy; 2020 Project Valkyrie</p></div>
 
     <!-- scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    
     <script type="text/javascript">
     fetch("https://api.kyri.io")
       .then(function() {
@@ -70,39 +62,5 @@
           document.getElementById("status").innerHTML=`Valkyrie is currently <span style="color:#FF4136;">offline</span> or at <span style="color:#FF851B;">reduced capacity</span>.`;
       });
     </script>
-
-    <!-- banner, keep on page for easy addition
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script type="text/javascript">
-      const AUG = 8;
-      const SEPT = 9;
-
-      var banner = document.getElementById("summer-banner");
-      var currMonth = new Date().getMonth();
-
-      if ((currMonth >= AUG) && (currMonth <= SEPT)) {
-        banner.style = "";
-        banner.innerHTML = `<p>Valkyrie will offline due to a physical<a id="sched-li" href="#">move</a>.</p>`;
-      }
-    </script>
-
-    <script type="text/javascript">
-      $('a').click( (e) => {
-        e.preventDefault();
-        if (e.target.id == "sched-li") {
-          Swal.fire({
-            title: 'Scheduled Downtime',
-            html: '<p>08/29/2019 -> 09/04/2019</p><p>Valkyrie will be unavailable during the above period due to the move.</p>',
-            imageUrl: 'https://fsvisuals.files.wordpress.com/2017/03/valkyrie-logo-design.jpg',
-            imageWidth: 200,
-            imageHeight: 200,
-            imageAlt: 'Valkyrie',
-            animation: false
-          })
-        }
-        return false;
-      });
-    </script> 
-    -->
-</body>
+ </body>
 </html>
